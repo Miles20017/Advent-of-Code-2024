@@ -10,6 +10,7 @@ namespace Day_1
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
