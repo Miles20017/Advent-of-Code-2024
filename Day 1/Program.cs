@@ -47,7 +47,7 @@ namespace Day_1
             int DistanceTotal = 0;
             for(int i=0;i<Left.Count;i++)
             {
-                int toTake = (Left[i]* Factor(Left[i],Right));
+                int toTake = (Left[i] * Factor(Left[i], Right)); //-Right[i]; //Uncomment and remove the Factor() for part 1
                 if (toTake < 0)
                 {
                     toTake *= -1;
