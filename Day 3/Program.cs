@@ -7,7 +7,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web;
-using System.Text.RegularExpressions;
 
 namespace Day_3
 {
@@ -18,7 +17,6 @@ namespace Day_3
             List<int> toMultiply = new List<int>();
             List<string> Possible = new List<string>();
             
-
             string pattern = @"mul\(\d{1,3},\d{1,3}\)";
             Regex regex = new Regex(pattern);
 
@@ -33,7 +31,7 @@ namespace Day_3
                 string input;
                 input = reader.ReadToEnd();
 
-                MatchCollection matches = regex.Matches(input);
+                MatchCollection mul = regex.Matches(input);
                 MatchCollection DoDontMatch = regex2.Matches(input);
 
                 for(int i = 0; i < input.Length; i++)
@@ -53,7 +51,7 @@ namespace Day_3
                         }
                     }
 
-                    foreach(Match match in matches)
+                    foreach(Match match in mul)
                     {
                         if (Enabled)
                         {
