@@ -40,7 +40,7 @@ namespace Day_6
         {
             int counter = 0;
 
-            if (map[GuardY][GuardX].c == 'X' && map[GuardY][GuardX].Direction == Direction)
+            if (WithinBounds(map, GuardX, GuardY) && map[GuardY][GuardX].c == 'X' && map[GuardY][GuardX].Direction == Direction)
             {
                 LoopCount++;
                 return 0;
@@ -53,10 +53,14 @@ namespace Day_6
                     {
                         Direction = "RIGHT";
                         GuardY++;
+                        counter--;
+                        map[GuardY][GuardX].c = '.';
+                        map[GuardY][GuardX].Direction = null;
                         break;
                     }
                     else
                     {
+                        if (map[GuardY][GuardX].c!='X') counter++;
                         map[GuardY][GuardX].c = 'X';
                         map[GuardY][GuardX].Direction = Direction;
                         GuardX++;
@@ -71,7 +75,7 @@ namespace Day_6
         {
             int counter = 0;
 
-            if (map[GuardY][GuardX].c == 'X' && map[GuardY][GuardX].Direction == Direction)
+            if (WithinBounds(map, GuardX, GuardY) && map[GuardY][GuardX].c == 'X' && map[GuardY][GuardX].Direction == Direction)
             {
                 LoopCount++;
                 return 0;
@@ -84,10 +88,14 @@ namespace Day_6
                     {
                         Direction = "LEFT";
                         GuardY--;
+                        counter--;
+                        map[GuardY][GuardX].c = '.';
+                        map[GuardY][GuardX].Direction = null;
                         break;
                     }
                     else
                     {
+                        if (map[GuardY][GuardX].c != 'X') counter++;
                         map[GuardY][GuardX].c = 'X';
                         map[GuardY][GuardX].Direction = Direction;
                         GuardY++;
@@ -101,7 +109,7 @@ namespace Day_6
         {
             int counter = 0;
 
-            if (map[GuardY][GuardX].c == 'X' && map[GuardY][GuardX].Direction == Direction)
+            if (WithinBounds(map, GuardX, GuardY) && map[GuardY][GuardX].c == 'X' && map[GuardY][GuardX].Direction == Direction)
             {
                 LoopCount++;
                 return 0;
@@ -114,10 +122,14 @@ namespace Day_6
                     {
                         Direction = "UP";
                         GuardX++;
+                        counter--;
+                        map[GuardY][GuardX].c = '.';
+                        map[GuardY][GuardX].Direction = null;
                         break;
                     }
                     else
                     {
+                        if (map[GuardY][GuardX].c != 'X') counter++;
                         map[GuardY][GuardX].c = 'X';
                         map[GuardY][GuardX].Direction = Direction;
                         GuardX--;
@@ -131,7 +143,7 @@ namespace Day_6
         {
             int counter = 0;
 
-            if (map[GuardY][GuardX].c == 'X' && map[GuardY][GuardX].Direction == Direction)
+            if (WithinBounds(map, GuardX, GuardY) && map[GuardY][GuardX].c == 'X' && map[GuardY][GuardX].Direction == Direction)
             {
                 LoopCount++;
                 return 0;
@@ -144,10 +156,14 @@ namespace Day_6
                     {
                         Direction = "DOWN";
                         GuardX--;
+                        counter--;
+                        map[GuardY][GuardX].c = '.';
+                        map[GuardY][GuardX].Direction = null;
                         break;
                     }
                     else
                     {
+                        if (map[GuardY][GuardX].c != 'X') counter++;
                         map[GuardY][GuardX].c = 'X';
                         map[GuardY][GuardX].Direction = Direction;
                         GuardX++;
