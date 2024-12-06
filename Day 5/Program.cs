@@ -30,25 +30,26 @@ namespace Day_5
             return ordering;
         }
 
-    static List<int> ReOrder(List<int> update, List<string> rules)
-    {
-        update.Sort((a, b) => {
-            foreach (var rule in rules)
-            {
-                int firstPage = int.Parse(rule.Substring(0, 2));
-                int secondPage = int.Parse(rule.Substring(3, 2));
 
-                if ((firstPage == a && secondPage == b) || (firstPage == b && secondPage == a))
+        static List<int> ReOrder(List<int> update, List<string> rules)
+        {
+            update.Sort((a, b) => {
+                foreach (var rule in rules)
                 {
-                    return a == firstPage ? -1 : 1;
-                }
-            }
-            return 0;
-        });
-        return update;
-    }
+                    int firstPage = int.Parse(rule.Substring(0, 2));
+                    int secondPage = int.Parse(rule.Substring(3, 2));
 
-    static bool FollowsRule(string update, string rule)
+                    if ((firstPage == a && secondPage == b) || (firstPage == b && secondPage == a))
+                    {
+                        return a == firstPage ? -1 : 1;
+                    }
+                }
+                return 0;
+            });
+            return update;
+        }
+
+        static bool FollowsRule(string update, string rule)
         {
             List<int> ordering = convertToIntList(update);
 
@@ -113,7 +114,6 @@ namespace Day_5
 
                 if (UpdateIsOkay)
                 {
-                    Console.WriteLine(Update);
                     counter += FindCentre(convertToIntList(Update));
                 }
                 else
