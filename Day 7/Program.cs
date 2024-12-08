@@ -24,7 +24,7 @@ namespace Day_7
             {
                 bool operatorIsMul = (Iteration % 3) == 1;
                 bool operatorIsAdd = (Iteration % 3) == 0;
-                bool operatorIsCat = (Iteration % 3) == 2;
+
                 Iteration /= 3;
 
                 if (operatorIsMul)
@@ -61,16 +61,6 @@ namespace Day_7
             string p2 = b.ToString();
             string f = p1 + p2;
             return long.Parse(f);
-        }
-
-        static int Multiply(int a, int b)
-        {
-            return a * b;
-        }
-
-        static int Add(int a, int b)
-        {
-            return a + b;
         }
 
         static Equation Split(string equation)
