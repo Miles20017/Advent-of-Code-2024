@@ -218,11 +218,11 @@ namespace Day_6___Attempt_2
                     //Console.Clear();
                     //DrawTestGrid(AugamentedMap);
                     //Console.ReadKey();
-                    Console.WriteLine("Copied Array Successfully");
+                    //Console.WriteLine("Copied Array Successfully");
 
                     if ((AugamentedMap[y, x].c != '#') && (AugamentedMap[y, x].c != '^'))
                     {
-                        Console.WriteLine("Remooved a point!");
+                        //Console.WriteLine("Remooved a point!");
                         AugamentedMap[y, x].c = '#';
                         DrawPath(AugamentedMap, StartPos);
                     }
